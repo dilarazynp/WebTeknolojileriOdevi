@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giriş Yap</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/script.js" defer></script>
+</head>
+<body>
+    <main>
+        <h1>Giriş Yap</h1>
+        <form action="php/login.php" method="POST">
+            <label for="username">Kullanıcı Adı:</label>
+            <input type="text" id="username" name="username" required placeholder="Örnek: b1812100001@sakarya.edu.tr">
+
+            <label for="password">Şifre:</label>
+            <input type="password" id="password" name="password" required placeholder="Şifrenizi girin">
+
+            <button type="submit">Giriş Yap</button>
+        </form>
+    </main>
+</body>
+</html>

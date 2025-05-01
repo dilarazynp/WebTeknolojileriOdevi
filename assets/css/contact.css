@@ -1,0 +1,184 @@
+/* İletişim Formu */
+.hero-section {
+    height: 50vh;
+    background: linear-gradient(rgba(35, 35, 35, 0.85), rgba(163, 92, 122, 0.85)), url('../images/hero-bg.jpg') center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    margin-top: -56px;
+    padding-top: 56px;
+}
+
+.hero-section h1 {
+    color: #FBF5E5;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero-section p {
+    color: #FBF5E5;
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* İletişim Kartları */
+.content-card {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 15px rgba(163, 92, 122, 0.1);
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.content-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(163, 92, 122, 0.2);
+}
+
+.content-card h3 {
+    color: #A35C7A;
+    margin-bottom: 20px;
+}
+
+/* İletişim Bilgileri */
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.info-item i {
+    font-size: 1.5rem;
+    margin-right: 15px;
+    color: #A35C7A;
+}
+
+.info-item h5 {
+    color: #A35C7A;
+    margin-bottom: 5px;
+}
+
+.info-item p {
+    margin: 0;
+    color: #666;
+}
+
+/* Form Stilleri */
+.form-control {
+    border: 1px solid #ddd;
+    padding: 12px;
+    border-radius: 8px;
+}
+
+.form-control:focus {
+    border-color: #A35C7A;
+    box-shadow: 0 0 0 0.2rem rgba(163, 92, 122, 0.25);
+}
+
+.btn-primary {
+    background-color: #A35C7A;
+    border-color: #A35C7A;
+    padding: 10px 25px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #C890A7;
+    border-color: #C890A7;
+    transform: translateY(-2px);
+}
+
+.btn-outline-secondary {
+    border-color: #A35C7A;
+    color: #A35C7A;
+    padding: 10px 25px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-secondary:hover {
+    background-color: #A35C7A;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Sosyal Medya İkonları */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.social-icons a {
+    color: #A35C7A;
+    font-size: 24px;
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #C890A7;
+    transform: translateY(-3px);
+}
+
+/* İletişim Bölümü */
+.contact-section {
+    background-color: #fafafa;
+}
+
+.contact-info, .contact-form {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(163, 92, 122, 0.1);
+}
+
+/* Sosyal Medya Linkleri */
+.social-links {
+    display: flex;
+    gap: 20px;
+}
+
+.social-links a {
+    color: #A35C7A;
+    font-size: 24px;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #C890A7;
+    transform: translateY(-3px);
+}
+
+/* İletişim Formu */
+.contact-form h3 {
+    color: #A35C7A;
+    margin-bottom: 25px;
+}
+
+/* Responsive Düzenlemeler */
+@media (max-width: 991.98px) {
+    .hero-section {
+        height: 30vh;
+    }
+    
+    .info-item {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .hero-section {
+        height: 25vh;
+    }
+    
+    .contact-info, .contact-form {
+        margin-bottom: 30px;
+    }
+} 

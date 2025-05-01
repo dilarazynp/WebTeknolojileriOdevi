@@ -1,0 +1,112 @@
+/* Genel Ayarlar */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #fafafa;
+    color: #212121;
+}
+
+h1, h2, h3, h4, h5 {
+    font-weight: 700;
+    color: #212121;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #FBF5E5;
+}
+
+.navbar .nav-link {
+    color: #A35C7A;
+    margin-left: 15px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.navbar .nav-link:hover, .navbar .nav-link.active {
+    color: #C890A7;
+    transform: translateY(-2px);
+}
+
+/* Hero Alanı */
+.hero-section {
+    height: 90vh;
+    background: linear-gradient(rgba(255, 107, 107, 0.85), rgba(255, 142, 142, 0.85)), url('../img/hero-bg.jpg') center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+/* Profil Fotoğrafı */
+.about-section img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #A35C7A;
+    box-shadow: 0 5px 15px rgba(163, 92, 122, 0.3);
+    margin: 0 auto;
+    display: block;
+}
+
+/* Hakkımda */
+.about-section {
+    background: white;
+    padding: 60px;
+    border-radius: 20px;
+    box-shadow: 0px 10px 30px rgba(255, 107, 107, 0.1);
+    margin-top: -50px;
+    position: relative;
+    z-index: 1;
+}
+
+.about-section ul {
+    padding-left: 20px;
+    list-style-type: none;
+}
+
+.about-section ul li {
+    margin-bottom: 10px;
+    padding-left: 25px;
+    position: relative;
+}
+
+.about-section ul li:before {
+    content: "•";
+    color: #ff6b6b;
+    position: absolute;
+    left: 0;
+}
+
+.about-section a {
+    color: #ff6b6b;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.about-section a:hover {
+    color: #ff8e8e;
+    text-decoration: none;
+    transform: translateX(5px);
+}
+
+/* Footer */
+footer {
+    background-color: #212121;
+    font-size: 0.9rem;
+}
+
+.btn-light {
+    background-color: #A35C7A;
+    color: #fff;
+    font-weight: 600;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-light:hover {
+    background-color: #C890A7;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(200, 144, 167, 0.3);
+}
