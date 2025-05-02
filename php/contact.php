@@ -28,6 +28,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Yeni gönderimi ekle
     $submissions[] = $data;
     
+
+    // Verileri JSON dosyasına kaydet
+if (file_put_contents($jsonFile, json_encode($submissions, JSON_PRETTY_PRINT))) {
+    // SESSION kullanarak mesaj bilgilerini taşıyacağız
+    session_start();
+    $_SESSION['last_submission'] = $data;
+    
+    // Redirect
+    header("Location: success.php");
+    exit();
+}
+
     // Verileri JSON dosyasına kaydet
     if (file_put_contents($jsonFile, json_encode($submissions, JSON_PRETTY_PRINT))) {
         // Başarılı mesajı göster

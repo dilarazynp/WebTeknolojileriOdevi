@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Şehrim: Konya</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <!-- Özel Stil Dosyaları -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/index.css">
+
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(to bottom right, #fff1f1, #ffe6fa);
+      margin: 0;
+      color: #212121;
+    }
+
+    .section-title {
+      font-weight: 800;
+      font-size: 3rem;
+      text-align: center;
+      margin: 60px 0 40px;
+      background: linear-gradient(90deg, #6610f2, #0d6efd);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .info-card {
+      background-color: #ffffffdd;
+      border-radius: 18px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      margin-bottom: 30px;
+      transition: all 0.3s ease;
+    }
+
+    .info-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .icon-title {
+      font-weight: 700;
+      font-size: 1.4rem;
+      margin-bottom: 15px;
+      color: #343a40;
+    }
+
+    .icon-title i {
+      color: #0d6efd;
+      margin-right: 10px;
+    }
+
+    .btn-back {
+      background: linear-gradient(90deg, #6f42c1, #0d6efd);
+      border: none;
+      padding: 12px 32px;
+      font-weight: bold;
+      border-radius: 8px;
+      color: white;
+      transition: background 0.3s ease;
+    }
+
+    .btn-back:hover {
+      background: linear-gradient(90deg, #5a32a3, #084cdf);
+    }
+
+    .carousel-inner img {
+      border-radius: 12px;
+      transition: transform 0.5s ease;
+    }
+
+    .carousel-inner img:hover {
+      transform: scale(1.02);
+    }
+
+    footer {
+      background-color: #212121;
+    }
+
+    footer a:hover {
+      color: #adb5bd !important;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light shadow-sm" style="background-color: #FBF5E5;">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <img src="./assets/images/1720639151245.jpeg" alt="ZDK Logo" height="40">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto align-items-center">
+        <li class="nav-item"><a class="nav-link" href="index.html">Anasayfa</a></li>
+        <li class="nav-item"><a class="nav-link" href="cv.html">Özgeçmiş</a></li>
+        <li class="nav-item"><a class="nav-link active" href="sehrim.html">Şehrim</a></li>
+        <li class="nav-item"><a class="nav-link" href="interests.html">İlgi Alanlarım</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">İletişim</a></li>
+        <li class="nav-item"><a class="btn btn-light btn-sm ms-2" href="login.html">Giriş</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Başlık -->
+<div class="container">
+  <h1 class="section-title">Şehrim: Konya</h1>
+</div>
+
+<!-- Slider -->
+<div class="container mb-5">
+  <div id="sehirSlider" class="carousel slide mx-auto" data-bs-ride="carousel" style="max-width: 600px;">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <a href="yer1.html"><img src="assets/images/slider1.jpg" class="d-block w-100" alt="Yer 1" style="height: 400px; object-fit: cover;"></a>
+      </div>
+      <div class="carousel-item">
+        <a href="yer2.html"><img src="assets/images/slider2.jpg" class="d-block w-100" alt="Yer 2" style="height: 400px; object-fit: cover;"></a>
+      </div>
+      <div class="carousel-item">
+        <a href="yer3.html"><img src="assets/images/slider3.jpg" class="d-block w-100" alt="Yer 3" style="height: 400px; object-fit: cover;"></a>
+      </div>
+      <div class="carousel-item">
+        <a href="yer4.html"><img src="assets/images/slider4.jpg" class="d-block w-100" alt="Yer 4" style="height: 400px; object-fit: cover;"></a>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#sehirSlider" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#sehirSlider" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+</div>
+
+<!-- Bilgi Kartları -->
+<div class="container">
+  <div class="info-card">
+    <h3 class="icon-title"><i class="fas fa-city"></i> Konya Hakkında</h3>
+    <p>Konya, Türkiye'nin yüzölçümü en büyük ili olup, tarih boyunca birçok medeniyete ev sahipliği yapmıştır. Selçuklu Devleti’ne başkentlik yapmış, Mevlana’nın şehridir.</p>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="info-card">
+        <h4 class="icon-title"><i class="fas fa-users"></i> Nüfus</h4>
+        <p>2.250.020 (2023)</p>
+
+        <h4 class="icon-title"><i class="fas fa-utensils"></i> Meşhur Yemekler</h4>
+        <ul>
+          <li>Etli Ekmek</li>
+          <li>Bamya Çorbası</li>
+          <li>Tirit</li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="info-card">
+        <h4 class="icon-title"><i class="fas fa-map-marked-alt"></i> Gezilecek Yerler</h4>
+        <ul>
+          <li>Mevlana Müzesi</li>
+          <li>Alaeddin Tepesi</li>
+          <li>Sille Köyü</li>
+          <li>Tropikal Kelebek Bahçesi</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Geri Butonu -->
+<div class="text-center my-5">
+  <a href="index.html" class="btn btn-back">← Anasayfaya Dön</a>
+</div>
+
+<!-- Footer -->
+<footer class="text-white text-center py-4 mt-5">
+  <div class="container">
+    <div class="mb-3">
+      <a href="index.html" class="text-white me-3">Anasayfa</a>
+      <a href="cv.html" class="text-white me-3">Özgeçmiş</a>
+      <a href="sehrim.html" class="text-white me-3">Şehrim</a>
+      <a href="interests.html" class="text-white me-3">İlgi Alanlarım</a>
+      <a href="contact.html" class="text-white">İletişim</a>
+    </div>
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-github"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+    </div>
+    <small class="mt-3 d-block">&copy; 2025 ZDK | Tüm Hakları Saklıdır.</small>
+  </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
