@@ -1,14 +1,124 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <title>Kelebek Bahçesi</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kelebekler Vadisi - Konya</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Stil Dosyalarımız -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/sehrim.css">
 </head>
-<body class="container py-5">
-  <h1>Tropikal Kelebek Bahçesi</h1>
-  <p>Türkiye'nin ilk kelebek bahçesi olan bu yapı, tropik iklimde yüzlerce kelebek türüne ev sahipliği yapmaktadır.</p>
-  <img src="assets/images/slider3.jpg" alt="Kelebek Bahçesi" class="img-fluid my-3">
-  <a href="sehrim.html" class="btn btn-secondary">← Geri Dön</a>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light shadow-sm">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">
+            <img src="assets/images/large.png" alt="ZDK Logo" height="40">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto align-items-center">
+                <li class="nav-item"><a class="nav-link" href="index.html">Ana Sayfa</a></li>
+                <li class="nav-item"><a class="nav-link" href="resume.html">Özgeçmiş</a></li>
+                <li class="nav-item"><a class="nav-link active" href="sehrim.html">Şehrim</a></li>
+                <li class="nav-item"><a class="nav-link" href="interests.html">İlgi Alanlarım</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">İletişim</a></li>
+                <li class="nav-item"><a class="btn btn-light btn-sm ms-2" href="login.html">Giriş</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- İçerik -->
+<div class="container my-5">
+    <div class="row">
+        <div class="col-lg-8">
+            <h1 class="mb-4">Kelebekler Vadisi</h1>
+            <img src="assets/images/slider3.jpg" class="img-fluid rounded mb-4" alt="Kelebekler Vadisi">
+            <p class="lead">Konya Kelebekler Vadisi, Türkiye'nin en büyük kelebek uçuş alanına sahip, doğal yaşam ve bilim merkezi niteliğindeki özel bir tesistir. 165 türden 20.000'in üzerinde kelebeğin yaşadığı bu özel mekan, hem eğitim hem de turizm açısından büyük önem taşımaktadır.</p>
+            
+            <h3 class="mt-4">Özellikler ve Aktiviteler</h3>
+            <ul>
+                <li>2000 m² kapalı alanda tropikal bahçe</li>
+                <li>Kelebek üretim ve araştırma laboratuvarı</li>
+                <li>Böcek müzesi ve sergi alanları</li>
+                <li>Eğitim ve workshop alanları</li>
+                <li>Fotoğraf çekim noktaları</li>
+            </ul>
+            
+            <h3 class="mt-4">Kelebek Türleri</h3>
+            <p>Vadide görülebilecek başlıca kelebek türleri:</p>
+            <ul>
+                <li>Atlas Güvesi</li>
+                <li>Mavi Morpho</li>
+                <li>Monarch Kelebeği</li>
+                <li>Owl Kelebeği</li>
+                <li>Yerli Anadolu türleri</li>
+            </ul>
+        </div>
+        
+        <div class="col-lg-4">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h4 class="card-title">Ziyaret Bilgileri</h4>
+                    <p><i class="fas fa-clock me-2"></i>Açılış Saatleri: 09:00 - 18:00</p>
+                    <p><i class="fas fa-map-marker-alt me-2"></i>Adres: Selçuklu, KONYA</p>
+                    <p><i class="fas fa-phone me-2"></i>Tel: (0332) 555 XX XX</p>
+                    <p><i class="fas fa-ticket-alt me-2"></i>Giriş: Ücretli (Öğrenci indirimi mevcuttur)</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Önemli Notlar</h4>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-info-circle me-2"></i>Rehberli turlar mevcuttur</li>
+                        <li><i class="fas fa-camera me-2"></i>Flaşsız fotoğraf çekimi serbesttir</li>
+                        <li><i class="fas fa-temperature-high me-2"></i>İçeride sıcaklık ve nem yüksektir</li>
+                        <li><i class="fas fa-child me-2"></i>Çocuklar için eğitici aktiviteler vardır</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Geri Butonu -->
+<div class="container text-center my-5">
+    <a href="sehrim.html" class="btn btn-back">← Şehrim Sayfasına Dön</a>
+</div>
+
+<!-- Footer -->
+<footer class="bg-dark text-center text-white py-4 mt-5">
+    <div class="container">
+        <div class="social-icons">
+            <a href="https://github.com/dilarazynp" target="_blank" class="text-white me-3"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/zeynepdilarakurnaz/" target="_blank" class="text-white me-3"><i class="fab fa-linkedin"></i></a>
+            <a href="#" target="_blank" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+            <a href="#" target="_blank" class="text-white"><i class="fab fa-twitter"></i></a>
+        </div>
+        <small class="mt-3 d-block text-white">&copy; 2025 ZDK | Tüm Hakları Saklıdır.</small>
+    </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Login State Check -->
+<script src="assets/js/login.js"></script>
+
 </body>
 </html>

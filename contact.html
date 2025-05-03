@@ -24,16 +24,16 @@
 <nav class="navbar navbar-expand-lg navbar-light shadow-sm">
     <div class="container">
         <a class="navbar-brand" href="index.html">
-            <img src="assets/images/1720639151245.jpeg" alt="ZDK Logo" height="40">
+            <img src="assets/images/large.png" alt="ZDK Logo" height="40">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto align-items-center">
-                <li class="nav-item"><a class="nav-link" href="index.html">Anasayfa</a></li>
-                <li class="nav-item"><a class="nav-link" href="cv.html">Özgeçmiş</a></li>
-                <li class="nav-item"><a class="nav-link" href="city.html">Şehrim</a></li>
+                <li class="nav-item"><a class="nav-link " href="index.html">Ana Sayfa</a></li>
+                <li class="nav-item"><a class="nav-link" href="resume.html">Özgeçmiş</a></li>
+                <li class="nav-item"><a class="nav-link " href="sehrim.html">Şehrim</a></li>
                 <li class="nav-item"><a class="nav-link" href="interests.html">İlgi Alanlarım</a></li>
                 <li class="nav-item"><a class="nav-link active" href="contact.html">İletişim</a></li>
                 <li class="nav-item"><a class="btn btn-light btn-sm ms-2" href="login.html">Giriş</a></li>
@@ -86,25 +86,26 @@
         <div class="col-lg-6">
             <div class="content-card">
                 <h3 class="mb-4">Mesaj Gönderin</h3>
-                <form id="contactForm" action="php/contact.php" method="POST">
+                <form id="contactForm" action="./php/contact.php" method="POST" onsubmit="sessionStorage.clear();">
+                    <input type="hidden" name="clear_session" value="1">
                     <div class="mb-3">
                         <label for="name" class="form-label">Adınız Soyadınız</label>
-                        <input type="text" class="form-control" id="name" name="name" required>
+                        <input type="text" class="form-control" id="name" name="name">
                         <div class="invalid-feedback" id="nameError"></div>
                     </div>
                     <div class="mb-3">
                         <label for="email" class="form-label">E-posta Adresiniz</label>
-                        <input type="email" class="form-control" id="email" name="email" required>
+                        <input type="email" class="form-control" id="email" name="email">
                         <div class="invalid-feedback" id="emailError"></div>
                     </div>
                     <div class="mb-3">
                         <label for="phone" class="form-label">Telefon Numaranız</label>
-                        <input type="tel" class="form-control" id="phone" name="phone" required>
+                        <input type="tel" class="form-control" id="phone" name="phone">
                         <div class="invalid-feedback" id="phoneError"></div>
                     </div>
                     <div class="mb-3">
                         <label for="subject" class="form-label">Konu</label>
-                        <select class="form-select" id="subject" name="subject" required>
+                        <select class="form-select" id="subject" name="subject">
                             <option value="">Seçiniz</option>
                             <option value="bilgi">Bilgi</option>
                             <option value="sikayet">Şikayet</option>
@@ -114,21 +115,21 @@
                     </div>
                     <div class="mb-3">
                         <label for="message" class="form-label">Mesajınız</label>
-                        <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                        <textarea class="form-control" id="message" name="message" rows="5"></textarea>
                         <div class="invalid-feedback" id="messageError"></div>
                     </div>
                     <div class="mb-3">
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="agreement" required>
+                            <input class="form-check-input" type="checkbox" id="agreement">
                             <label class="form-check-label" for="agreement">
-                                Kişisel verilerimin işlenmesine izin veriyorum
+                                <b>Kişisel verilerimin işlenmesine izin veriyorum</b>
                             </label>
                             <div class="invalid-feedback" id="agreementError"></div>
                         </div>
                     </div>
                     <div class="d-flex gap-2">
                         <button type="submit" class="btn btn-primary">Gönder</button>
-                        <button type="reset" class="btn btn-secondary">Temizle</button>
+                        <button type="reset" class="btn btn-secondary" onclick="resetForm()">Temizle</button>
                     </div>
                 </form>
             </div>
@@ -140,8 +141,8 @@
 <footer class="bg-dark text-center text-white py-4 mt-5">
     <div class="container">
         <div class="social-icons">
-            <a href="#" target="_blank" class="text-white me-3"><i class="fab fa-github"></i></a>
-            <a href="#" target="_blank" class="text-white me-3"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/dilarazynp" target="_blank" class="text-white me-3"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/zeynepdilarakurnaz/" target="_blank" class="text-white me-3"><i class="fab fa-linkedin"></i></a>
             <a href="#" target="_blank" class="text-white me-3"><i class="fab fa-instagram"></i></a>
             <a href="#" target="_blank" class="text-white"><i class="fab fa-twitter"></i></a>
         </div>
@@ -152,78 +153,21 @@
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-<!-- Form Validasyon JS -->
+<!-- Login State Check -->
+<script src="assets/js/login.js"></script>
+
+<!-- Form Reset Function -->
 <script>
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const phone = document.getElementById('phone').value;
-        const subject = document.getElementById('subject').value;
-        const message = document.getElementById('message').value;
-        const agreement = document.getElementById('agreement').checked;
-        
-        let isValid = true;
-        
-        // İsim kontrolü
-        if (name.length < 3) {
-            document.getElementById('nameError').textContent = 'İsim en az 3 karakter olmalıdır.';
-            document.getElementById('name').classList.add('is-invalid');
-            isValid = false;
-        } else {
-            document.getElementById('name').classList.remove('is-invalid');
-        }
-        
-        // E-posta kontrolü
-        if (!email.includes('@')) {
-            document.getElementById('emailError').textContent = 'Geçerli bir e-posta adresi giriniz.';
-            document.getElementById('email').classList.add('is-invalid');
-            isValid = false;
-        } else {
-            document.getElementById('email').classList.remove('is-invalid');
-        }
-        
-        // Telefon kontrolü
-        if (!/^\d+$/.test(phone)) {
-            document.getElementById('phoneError').textContent = 'Telefon numarası sadece rakamlardan oluşmalıdır.';
-            document.getElementById('phone').classList.add('is-invalid');
-            isValid = false;
-        } else {
-            document.getElementById('phone').classList.remove('is-invalid');
-        }
-        
-        // Konu kontrolü
-        if (!subject) {
-            document.getElementById('subjectError').textContent = 'Lütfen bir konu seçiniz.';
-            document.getElementById('subject').classList.add('is-invalid');
-            isValid = false;
-        } else {
-            document.getElementById('subject').classList.remove('is-invalid');
-        }
-        
-        // Mesaj kontrolü
-        if (message.length < 10) {
-            document.getElementById('messageError').textContent = 'Mesaj en az 10 karakter olmalıdır.';
-            document.getElementById('message').classList.add('is-invalid');
-            isValid = false;
-        } else {
-            document.getElementById('message').classList.remove('is-invalid');
-        }
-        
-        // Sözleşme kontrolü
-        if (!agreement) {
-            document.getElementById('agreementError').textContent = 'Lütfen sözleşmeyi kabul ediniz.';
-            document.getElementById('agreement').classList.add('is-invalid');
-            isValid = false;
-        } else {
-            document.getElementById('agreement').classList.remove('is-invalid');
-        }
-        
-        if (isValid) {
-            this.submit();
-        }
+function resetForm() {
+    document.getElementById('contactForm').reset();
+    // Tüm hata mesajlarını temizle
+    document.querySelectorAll('.invalid-feedback').forEach(element => {
+        element.style.display = 'none';
     });
+    document.querySelectorAll('.form-control').forEach(element => {
+        element.classList.remove('is-invalid');
+    });
+}
 </script>
 
 </body>

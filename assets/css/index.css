@@ -1,6 +1,6 @@
 /* Hero Alanı */
 .hero-section {
-    height: 90vh;
+    height: 50vh;
     background: linear-gradient(rgba(35, 35, 35, 0.85), rgba(163, 92, 122, 0.85)), url('../images/hero-bg.jpg') center/cover no-repeat;
     display: flex;
     justify-content: center;
