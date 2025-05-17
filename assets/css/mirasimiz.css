@@ -1,0 +1,148 @@
+.hero-section {
+    background-image: url('../images/mevlana-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 500px;
+    position: relative;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+.text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.content-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.museum-info {
+    margin-bottom: 2rem;
+}
+
+.museum-info img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;
+}
+
+.museum-info p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #34495e;
+}
+
+.card {
+    transition: transform 0.3s ease;
+    border: none;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-title {
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.lead {
+    color: #34495e;
+    line-height: 1.8;
+}
+
+h2, h3, h4 {
+    color: #2c3e50;
+}
+
+/* Responsive Hero Section */
+.hero-section {
+    min-height: 400px;
+    background-size: cover;
+    background-position: center;
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        min-height: 300px;
+    }
+    
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-section p {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-section {
+        min-height: 200px;
+    }
+    
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-section p {
+        font-size: 1rem;
+    }
+}
+
+/* Responsive Content Card */
+.content-card {
+    padding: 2rem;
+}
+
+@media (max-width: 768px) {
+    .content-card {
+        padding: 1.5rem;
+    }
+    
+    .museum-info img {
+        margin-bottom: 1rem;
+    }
+}
+
+/* Responsive Image Adjustments */
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Responsive Card Adjustments */
+.card {
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 576px) {
+    .card-title {
+        font-size: 1.25rem;
+    }
+    
+    .card-text {
+        font-size: 0.9rem;
+    }
+} 

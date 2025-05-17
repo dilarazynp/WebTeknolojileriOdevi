@@ -73,18 +73,10 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
                 <li class="nav-item"><a class="nav-link" href="../index.html">Ana Sayfa</a></li>
                 <li class="nav-item"><a class="nav-link" href="../resume.html">Özgeçmiş</a></li>
                 <li class="nav-item"><a class="nav-link" href="../sehrim.html">Şehrim</a></li>
-                <li class="nav-item"><a class="nav-link" href="../interests.html">İlgi Alanlarım</a></li>
+                <li class="nav-item"><a class="nav-link" href="../mirasimiz.html">Mirasımız</a></li>
+                <li class="nav-item"><a class="nav-link" href="../ilgi.html">İlgi Alanlarım</a></li>
                 <li class="nav-item"><a class="nav-link" href="../contact.html">İletişim</a></li>
-                <li class="nav-item">
-                    <div class="d-flex align-items-center">
-                        <span class="nav-link me-2 text-success">
-                            <i class="fas fa-user me-1"></i><?php echo htmlspecialchars($_SESSION['email']); ?>
-                        </span>
-                        <a class="btn btn-danger btn-sm" href="#" onclick="handleLogout(event)">
-                            <i class="fas fa-sign-out-alt me-1"></i>Çıkış
-                        </a>
-                    </div>
-                </li>
+                <li class="nav-item"><a class="btn btn-light btn-sm ms-2 active" href="../login.html">Giriş</a></li>
             </ul>
         </div>
     </div>

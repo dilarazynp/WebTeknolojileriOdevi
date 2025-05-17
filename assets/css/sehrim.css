@@ -106,4 +106,60 @@
     .info-card {
         padding: 20px;
     }
+}
+
+/* Responsive Slider Styles */
+.carousel-item {
+    height: 400px;
+}
+
+.carousel-item img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .carousel-item {
+        height: 300px;
+    }
+}
+
+@media (max-width: 576px) {
+    .carousel-item {
+        height: 200px;
+    }
+}
+
+/* Responsive Card Styles */
+.info-card {
+    height: 100%;
+    padding: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .info-card {
+        margin-bottom: 1rem;
+    }
+    
+    .place-item {
+        margin-bottom: 1rem;
+    }
+}
+
+/* Responsive Title Styles */
+.section-title {
+    font-size: 2.5rem;
+}
+
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .section-title {
+        font-size: 1.75rem;
+    }
 } 

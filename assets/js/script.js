@@ -11,8 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
   
   async function filmGoster(filmAdi, filmYili) {
-    const apiKey = "d6c6992f";
-    const url = `https://www.omdbapi.com/?apikey=${apiKey}&t=${encodeURIComponent(filmAdi)}&y=${filmYili}`;
+    const url = `https://www.omdbapi.com/?apikey=${config.OMDB_API_KEY}&t=${encodeURIComponent(filmAdi)}&y=${filmYili}`;
   
     try {
       const response = await fetch(url);

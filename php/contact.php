@@ -1,18 +1,9 @@
 <?php
 session_start();
 
-// Eğer form yeni gönderiliyorsa veya temizleme isteği varsa session'ı temizle
-if (isset($_POST['clear_session']) || !isset($_SESSION['form_submitted'])) {
-    session_unset();
-    session_destroy();
-    session_start();
-}
-
-// Form POST ile gönderilmiş ve daha önce işlenmemişse
-if ($_SERVER["REQUEST_METHOD"] == "POST" && !isset($_SESSION['form_submitted'])) {
-    // Form işlendi olarak işaretle
-    $_SESSION['form_submitted'] = true;
-    
+// Form POST ile gönderilmişse
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Form verilerini al
     $name = $_POST['name'] ?? '';
     $email = $_POST['email'] ?? '';
     $phone = $_POST['phone'] ?? '';
@@ -29,25 +20,47 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !isset($_SESSION['form_submitted']))
         'date' => date('Y-m-d H:i:s')
     ];
 
-    $jsonFile = '../form_submissions.json';
-    $submissions = [];
-    if (file_exists($jsonFile)) {
-        $submissions = json_decode(file_get_contents($jsonFile), true) ?? [];
+    // JSON dosyasına kaydet
+    $dataDir = __DIR__ . DIRECTORY_SEPARATOR . 'data';
+    $jsonFile = $dataDir . DIRECTORY_SEPARATOR . 'form_submissions.json';
+
+    // Debug bilgisi
+    error_log("Dizin yolu: " . $dataDir);
+    error_log("Dosya yolu: " . $jsonFile);
+
+    // Dizin kontrolü
+    if (!is_dir($dataDir)) {
+        error_log("Dizin oluşturuluyor: " . $dataDir);
+        if (!mkdir($dataDir, 0777, true)) {
+            error_log("Dizin oluşturma hatası: " . error_get_last()['message']);
+            die('Dizin oluşturulamadı: ' . $dataDir);
+        }
     }
+
+    // Dosya kontrolü
+    if (!file_exists($jsonFile)) {
+        error_log("Dosya oluşturuluyor: " . $jsonFile);
+        if (file_put_contents($jsonFile, '[]') === false) {
+            error_log("Dosya oluşturma hatası: " . error_get_last()['message']);
+            die('Dosya oluşturulamadı: ' . $jsonFile);
+        }
+    }
+
+    // Mevcut verileri oku
+    $jsonContent = file_get_contents($jsonFile);
+    if ($jsonContent === false) {
+        error_log("Dosya okuma hatası: " . error_get_last()['message']);
+        die('Dosya okunamadı: ' . $jsonFile);
+    }
+
+    $submissions = json_decode($jsonContent, true) ?? [];
     $submissions[] = $data;
-    file_put_contents($jsonFile, json_encode($submissions, JSON_PRETTY_PRINT));
 
-    // Form verilerini session'a kaydet (gösterim için)
-    $_SESSION['form_data'] = $data;
-} 
-
-// Eğer form daha önce gönderilmişse ve session'da veri varsa
-if (isset($_SESSION['form_submitted']) && isset($_SESSION['form_data'])) {
-    $name = $_SESSION['form_data']['name'];
-    $email = $_SESSION['form_data']['email'];
-    $phone = $_SESSION['form_data']['phone'];
-    $subject = $_SESSION['form_data']['subject'];
-    $message = $_SESSION['form_data']['message'];
+    // Yeni verileri kaydet
+    if (file_put_contents($jsonFile, json_encode($submissions, JSON_PRETTY_PRINT)) === false) {
+        error_log("Dosya yazma hatası: " . error_get_last()['message']);
+        die('Dosya yazılamadı: ' . $jsonFile);
+    }
 ?>
 <!DOCTYPE html>
 <html lang="tr">
@@ -115,7 +128,8 @@ if (isset($_SESSION['form_submitted']) && isset($_SESSION['form_data'])) {
                     <li class="nav-item"><a class="nav-link" href="../index.html">Ana Sayfa</a></li>
                     <li class="nav-item"><a class="nav-link" href="../resume.html">Özgeçmiş</a></li>
                     <li class="nav-item"><a class="nav-link" href="../sehrim.html">Şehrim</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../interests.html">İlgi Alanlarım</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../mirasimiz.html">Mirasımız</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../ilgi.html">İlgi Alanlarım</a></li>
                     <li class="nav-item"><a class="nav-link active" href="../contact.html">İletişim</a></li>
                     <li class="nav-item"><a class="btn btn-light btn-sm ms-2" href="../login.html">Giriş</a></li>
                 </ul>
@@ -213,7 +227,7 @@ if (isset($_SESSION['form_submitted']) && isset($_SESSION['form_data'])) {
 </html>
 <?php
 } else {
-    // Session'da veri yoksa veya direkt erişilirse contact.html'e yönlendir
+    // POST ile gelmemişse contact.html'e yönlendir
     header("Location: ../contact.html");
     exit();
 }

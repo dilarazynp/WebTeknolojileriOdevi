@@ -1,86 +1,135 @@
-document.getElementById('contactForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const phone = document.getElementById('phone').value;
-    const subject = document.getElementById('subject').value;
-    const message = document.getElementById('message').value;
-    const agreement = document.getElementById('agreement').checked;
-    
-    let isValid = true;
-    
-    // İsim kontrolü
-    if (name.length < 3) {
-        document.getElementById('nameError').textContent = 'İsim en az 3 karakter olmalıdır.';
-        document.getElementById('name').classList.add('is-invalid');
-        isValid = false;
-    } else {
-        document.getElementById('name').classList.remove('is-invalid');
-    }
-    
-    // E-posta kontrolü
-    if (!email.includes('@') || !email.includes('.')) {
-        document.getElementById('emailError').textContent = 'Geçerli bir e-posta adresi giriniz.';
-        document.getElementById('email').classList.add('is-invalid');
-        isValid = false;
-    } else {
-        document.getElementById('email').classList.remove('is-invalid');
-    }
-    
-    // Telefon kontrolü
-    if (!/^\d{10,11}$/.test(phone)) {
-        document.getElementById('phoneError').textContent = 'Telefon numarası 10-11 rakamdan oluşmalıdır.';
-        document.getElementById('phone').classList.add('is-invalid');
-        isValid = false;
-    } else {
-        document.getElementById('phone').classList.remove('is-invalid');
-    }
-    
-    // Konu kontrolü
-    if (!subject) {
-        document.getElementById('subjectError').textContent = 'Lütfen bir konu seçiniz.';
-        document.getElementById('subject').classList.add('is-invalid');
-        isValid = false;
-    } else {
-        document.getElementById('subject').classList.remove('is-invalid');
-    }
-    
-    // Mesaj kontrolü
-    if (message.length < 10) {
-        document.getElementById('messageError').textContent = 'Mesaj en az 10 karakter olmalıdır.';
-        document.getElementById('message').classList.add('is-invalid');
-        isValid = false;
-    } else {
-        document.getElementById('message').classList.remove('is-invalid');
-    }
-    
-    // Sözleşme kontrolü
-    if (!agreement) {
-        document.getElementById('agreementError').textContent = 'Lütfen sözleşmeyi kabul ediniz.';
-        document.getElementById('agreement').classList.add('is-invalid');
-        isValid = false;
-    } else {
-        document.getElementById('agreement').classList.remove('is-invalid');
-    }
-    
-    if (isValid) {
-        this.submit();
-    }
-});
-
-function resetForm() {
+document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('contactForm');
-    form.reset();
-    
-    // Tüm hata mesajlarını ve invalid class'larını temizle
-    const inputs = document.querySelectorAll('.form-control, .form-select, .form-check-input');
+    const checkButton = document.getElementById('checkButton');
+    const submitButton = document.getElementById('submitButton');
+    const resetButton = document.getElementById('resetButton');
+
+    // Form elemanları
+    const nameInput = document.getElementById('name');
+    const emailInput = document.getElementById('email');
+    const phoneInput = document.getElementById('phone');
+    const subjectInput = document.getElementById('subject');
+    const messageInput = document.getElementById('message');
+    const agreementInput = document.getElementById('agreement');
+
+    // Hata mesajları için elementler
+    const nameError = document.getElementById('nameError');
+    const emailError = document.getElementById('emailError');
+    const phoneError = document.getElementById('phoneError');
+    const subjectError = document.getElementById('subjectError');
+    const messageError = document.getElementById('messageError');
+    const agreementError = document.getElementById('agreementError');
+
+    // Hata mesajlarını temizle
+    function clearErrors() {
+        nameError.textContent = '';
+        emailError.textContent = '';
+        phoneError.textContent = '';
+        subjectError.textContent = '';
+        messageError.textContent = '';
+        agreementError.textContent = '';
+
+        nameInput.classList.remove('is-invalid');
+        emailInput.classList.remove('is-invalid');
+        phoneInput.classList.remove('is-invalid');
+        subjectInput.classList.remove('is-invalid');
+        messageInput.classList.remove('is-invalid');
+        agreementInput.classList.remove('is-invalid');
+    }
+
+    // Form validasyonu
+    function validateForm() {
+        clearErrors();
+        let isValid = true;
+
+        // İsim kontrolü
+        if (!nameInput.value.trim()) {
+            nameError.textContent = 'Ad Soyad alanı boş bırakılamaz';
+            nameInput.classList.add('is-invalid');
+            isValid = false;
+        } else if (nameInput.value.trim().length < 3) {
+            nameError.textContent = 'Ad Soyad en az 3 karakter olmalıdır';
+            nameInput.classList.add('is-invalid');
+            isValid = false;
+        }
+
+        // Email kontrolü
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailInput.value.trim()) {
+            emailError.textContent = 'E-posta alanı boş bırakılamaz';
+            emailInput.classList.add('is-invalid');
+            isValid = false;
+        } else if (!emailRegex.test(emailInput.value.trim())) {
+            emailError.textContent = 'Geçerli bir e-posta adresi giriniz';
+            emailInput.classList.add('is-invalid');
+            isValid = false;
+        }
+
+        // Telefon kontrolü
+        const phoneRegex = /^[0-9]{10,11}$/;
+        if (!phoneInput.value.trim()) {
+            phoneError.textContent = 'Telefon alanı boş bırakılamaz';
+            phoneInput.classList.add('is-invalid');
+            isValid = false;
+        } else if (!phoneRegex.test(phoneInput.value.trim())) {
+            phoneError.textContent = 'Telefon numarası sadece rakamlardan oluşmalıdır (10-11 haneli)';
+            phoneInput.classList.add('is-invalid');
+            isValid = false;
+        }
+
+        // Konu kontrolü
+        if (!subjectInput.value) {
+            subjectError.textContent = 'Lütfen bir konu seçiniz';
+            subjectInput.classList.add('is-invalid');
+            isValid = false;
+        }
+
+        // Mesaj kontrolü
+        if (!messageInput.value.trim()) {
+            messageError.textContent = 'Mesaj alanı boş bırakılamaz';
+            messageInput.classList.add('is-invalid');
+            isValid = false;
+        } else if (messageInput.value.trim().length < 10) {
+            messageError.textContent = 'Mesaj en az 10 karakter olmalıdır';
+            messageInput.classList.add('is-invalid');
+            isValid = false;
+        }
+
+        // Kişisel veriler izni kontrolü
+        if (!agreementInput.checked) {
+            agreementError.textContent = 'Devam etmek için kişisel verilerin işlenmesine izin vermelisiniz';
+            agreementInput.classList.add('is-invalid');
+            isValid = false;
+        }
+
+        submitButton.disabled = !isValid;
+        return isValid;
+    }
+
+    // Form sıfırlama
+    function resetForm() {
+        form.reset();
+        clearErrors();
+        submitButton.disabled = true;
+    }
+
+    // Event listeners
+    checkButton.addEventListener('click', validateForm);
+    resetButton.addEventListener('click', resetForm);
+
+    form.addEventListener('submit', function(event) {
+        if (!validateForm()) {
+            event.preventDefault();
+        }
+    });
+
+    // Input değişikliklerinde validasyon
+    const inputs = [nameInput, emailInput, phoneInput, subjectInput, messageInput, agreementInput];
     inputs.forEach(input => {
-        input.classList.remove('is-invalid');
+        input.addEventListener('input', function() {
+            if (this.classList.contains('is-invalid')) {
+                validateForm();
+            }
+        });
     });
-    
-    const errorElements = document.querySelectorAll('.invalid-feedback');
-    errorElements.forEach(element => {
-        element.textContent = '';
-    });
-} 
+}); 

@@ -31,10 +31,11 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto align-items-center">
-                <li class="nav-item"><a class="nav-link " href="index.html">Ana Sayfa</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.html">Ana Sayfa</a></li>
                 <li class="nav-item"><a class="nav-link" href="resume.html">Özgeçmiş</a></li>
-                <li class="nav-item"><a class="nav-link " href="sehrim.html">Şehrim</a></li>
-                <li class="nav-item"><a class="nav-link" href="interests.html">İlgi Alanlarım</a></li>
+                <li class="nav-item"><a class="nav-link" href="sehrim.html">Şehrim</a></li>
+                <li class="nav-item"><a class="nav-link" href="mirasimiz.html">Mirasımız</a></li>
+                <li class="nav-item"><a class="nav-link" href="ilgi.html">İlgi Alanlarım</a></li>
                 <li class="nav-item"><a class="nav-link active" href="contact.html">İletişim</a></li>
                 <li class="nav-item"><a class="btn btn-light btn-sm ms-2" href="login.html">Giriş</a></li>
             </ul>
@@ -67,27 +68,37 @@
                     <i class="fas fa-phone text-danger me-2"></i>
                     <div>
                         <h5>Telefon</h5>
-                        <p>+90 555 123 4567</p>
+                        <p>+90 555 042 54 54</p>
                     </div>
                 </div>
                 <div class="info-item mb-4">
                     <i class="fas fa-map-marker-alt text-danger me-2"></i>
                     <div>
                         <h5>Konum</h5>
-                        <p>Sakarya Üniversitesi, Esentepe Kampüsü</p>
+                        <p>Selçuklu, Konya</p>
                     </div>
                 </div>
-                <div class="map-container mb-4">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1511.443288578977!2d30.327589008973746!3d40.742521226621726!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ccaded70ee240b%3A0xd81085b5551312fd!2sBilgisayar%20Ve%20Bili%C5%9Fim%20Bilimleri%20Fak%C3%BCltesi!5e0!3m2!1str!2str!4v1746028543568!5m2!1str!2str" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <div class="container mt-5">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="map-responsive">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d195884.6387897735!2d32.4847563!3d37.8749985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d08f34a69e3b7d%3A0x5e9a5c9bc4c3d4c1!2sKonya!5e0!3m2!1str!2str!4v1647881234567!5m2!1str!2str" 
+                                    width="100%" 
+                                    height="450" 
+                                    style="border:0;" 
+                                    allowfullscreen="" 
+                                    loading="lazy">
+                                </iframe>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            
             </div>
         </div>
         <div class="col-lg-6">
             <div class="content-card">
                 <h3 class="mb-4">Mesaj Gönderin</h3>
-                <form id="contactForm" action="./php/contact.php" method="POST" onsubmit="sessionStorage.clear();">
-                    <input type="hidden" name="clear_session" value="1">
+                <form id="contactForm" action="./php/contact.php" method="POST">
                     <div class="mb-3">
                         <label for="name" class="form-label">Adınız Soyadınız</label>
                         <input type="text" class="form-control" id="name" name="name">
@@ -120,7 +131,7 @@
                     </div>
                     <div class="mb-3">
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="agreement">
+                            <input class="form-check-input" type="checkbox" id="agreement" name="agreement">
                             <label class="form-check-label" for="agreement">
                                 <b>Kişisel verilerimin işlenmesine izin veriyorum</b>
                             </label>
@@ -128,8 +139,9 @@
                         </div>
                     </div>
                     <div class="d-flex gap-2">
-                        <button type="submit" class="btn btn-primary">Gönder</button>
-                        <button type="reset" class="btn btn-secondary" onclick="resetForm()">Temizle</button>
+                        <button type="button" class="btn btn-info" id="checkButton">Kontrol Et</button>
+                        <button type="submit" class="btn btn-primary" id="submitButton" disabled>Gönder</button>
+                        <button type="button" class="btn btn-secondary" id="resetButton">Temizle</button>
                     </div>
                 </form>
             </div>
@@ -156,19 +168,8 @@
 <!-- Login State Check -->
 <script src="assets/js/login.js"></script>
 
-<!-- Form Reset Function -->
-<script>
-function resetForm() {
-    document.getElementById('contactForm').reset();
-    // Tüm hata mesajlarını temizle
-    document.querySelectorAll('.invalid-feedback').forEach(element => {
-        element.style.display = 'none';
-    });
-    document.querySelectorAll('.form-control').forEach(element => {
-        element.classList.remove('is-invalid');
-    });
-}
-</script>
+<!-- Form Validation -->
+<script src="assets/js/contact.js"></script>
 
 </body>
 </html>

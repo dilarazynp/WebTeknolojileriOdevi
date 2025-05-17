@@ -23,7 +23,7 @@ function updateNavbar(isLoggedIn, userEmail) {
         `;
     } else {
         loginContainer.innerHTML = `
-            <a class="btn btn-light btn-sm ms-2" href="login.html">
+            <a class="btn btn-light btn-sm ms-2" href="/WebTeknolojileriOdevi/login.html">
                 <i class="fas fa-sign-in-alt me-1"></i>Giriş
             </a>
         `;
@@ -50,7 +50,7 @@ async function handleSubmit(event) {
     }
     
     try {
-        const response = await fetch('php/login.php', {
+        const response = await fetch('/WebTeknolojileriOdevi/php/login.php', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',
@@ -64,7 +64,7 @@ async function handleSubmit(event) {
             // Login başarılı
             sessionStorage.setItem('isLoggedIn', 'true');
             sessionStorage.setItem('userEmail', email);
-            window.location.href = 'php/login.php'; // Başarılı sayfasına yönlendir
+            window.location.href = '/WebTeknolojileriOdevi/php/login.php'; // Başarılı sayfasına yönlendir
         } else {
             showError(data.message || 'E-posta veya şifre hatalı!');
         }
@@ -80,18 +80,18 @@ async function handleSubmit(event) {
 async function handleLogout(event) {
     event.preventDefault();
     try {
-        const response = await fetch('php/logout.php');
+        const response = await fetch('/WebTeknolojileriOdevi/php/logout.php');
         if (response.ok) {
             sessionStorage.removeItem('isLoggedIn');
             sessionStorage.removeItem('userEmail');
-            window.location.href = 'index.html';
+            window.location.href = '/WebTeknolojileriOdevi/index.html';
         }
     } catch (error) {
         console.error('Logout error:', error);
         // Hata olsa bile client-side logout işlemini yap
         sessionStorage.removeItem('isLoggedIn');
         sessionStorage.removeItem('userEmail');
-        window.location.href = 'index.html';
+        window.location.href = '/WebTeknolojileriOdevi/index.html';
     }
 }
 

@@ -1,87 +1,85 @@
-# Web Teknolojileri Dersi Kişisel Web Sitesi Projesi
+# Web Teknolojileri Projesi
 
-Bu proje, Sakarya Üniversitesi Web Teknolojileri dersi kapsamında geliştirilen kişisel bir web sitesidir.
+Bu proje, Sakarya Üniversitesi Web Teknolojileri dersi kapsamında geliştirilmiş bir kişisel web sitesidir.
+
+## Proje Hakkında
+
+Bu web sitesi, kişisel bilgilerimi, ilgi alanlarımı, şehrimi ve kültürel mirasımı tanıtan interaktif bir platformdur. Site, modern web teknolojileri kullanılarak geliştirilmiş olup, kullanıcı dostu bir arayüze sahiptir.
 
 ## Özellikler
 
-- **Ana Sayfa**: Kişisel bilgiler ve site hakkında genel bilgiler
-- **Özgeçmiş**: Eğitim bilgileri ve deneyimler
-- **Şehrim**: Konya şehri hakkında bilgiler ve önemli mekanlar
-  - Mevlana Müzesi
-  - Alaeddin Tepesi
-  - Kelebekler Vadisi
-  - Sille Köyü
-  - Çatalhöyük
-- **İlgi Alanlarım**: Kişisel ilgi alanları ve hobiler
-- **İletişim**: İletişim formu ve bilgileri
+- Responsive tasarım (Bootstrap 5)
+- İletişim formu (PHP ile form işleme)
+- Giriş sistemi (PHP Session yönetimi)
+- Şehir tanıtımı ve harita entegrasyonu
+- Kültürel miras bilgileri
+- İlgi alanları sayfası
+- Özgeçmiş sayfası
 
-## Kullanılan Teknolojiler
+## Teknolojiler
 
 - HTML5
 - CSS3
 - JavaScript
 - PHP
-- Bootstrap 5.3.2
-- Font Awesome 6.0.0
-- Google Fonts (Montserrat)
-
-## Güvenlik Özellikleri
-
-- Session yönetimi
-- XSS koruması
-- Form validasyonları
-- Client-side ve Server-side doğrulama
-
-## Giriş Bilgileri
-
-- **E-posta**: g221210011@sakarya.edu.tr
-- **Şifre**: g221210011
-
-## Kurulum
-
-1. Dosyaları web sunucusuna yükleyin
-2. PHP 7.0 veya üzeri sürüm gereklidir
-3. Web sunucusunda session desteği olmalıdır
+- Bootstrap 5
+- Google Maps API
+- Font Awesome
+- Google Fonts
 
 ## Dosya Yapısı
 
 ```
 WebTeknolojileriOdevi/
-│
 ├── assets/
 │   ├── css/
-│   │   ├── style.css
-│   │   ├── login.css
-│   │   └── sehrim.css
-│   ├── js/
-│   │   └── login.js
-│   └── images/
-│       ├── large.png
-│       └── slider1.jpg - slider5.jpg
-│
+│   ├── images/
+│   └── js/
 ├── php/
-│   ├── login.php
-│   └── logout.php
-│
+│   ├── data/
+│   │   └── form_submissions.json
+│   ├── contact.php
+│   └── login.php
 ├── index.html
+├── contact.html
 ├── login.html
 ├── resume.html
 ├── sehrim.html
-├── interests.html
-├── contact.html
+├── mirasimiz.html
+├── ilgi.html
 └── README.md
 ```
 
-## Önemli Notlar
+## Kurulum
 
-- Tüm sayfalar responsive tasarıma sahiptir
-- Modern UI/UX prensipleri gözetilmiştir
-- Bootstrap grid sistemi kullanılmıştır
-- Font Awesome ikonları entegre edilmiştir
+1. Projeyi bilgisayarınıza klonlayın:
+```bash
+git clone https://github.com/dilarazynp/WebTeknolojileriOdevi.git
+```
 
-## Geliştirici
+2. Projeyi bir web sunucusuna (örneğin XAMPP, WAMP) yükleyin.
 
-- **Ad Soyad**: Zeynep Dilara Kurnaz
-- **Öğrenci No**: G221210011
-- **Bölüm**: Bilgisayar Mühendisliği
-- **Ders**: Web Teknolojileri (2024)
+3. Web sunucusunu başlatın ve projeyi tarayıcınızda açın.
+
+## Gereksinimler
+
+- PHP 7.4 veya üzeri
+- Web sunucusu (Apache, Nginx vb.)
+- Modern bir web tarayıcısı
+
+## Kullanım
+
+1. Ana sayfadan başlayarak sitenin tüm bölümlerini gezebilirsiniz.
+2. İletişim formunu kullanarak mesaj gönderebilirsiniz.
+3. Giriş yaparak özel içeriklere erişebilirsiniz.
+4. Şehrim ve mirasımız sayfalarından detaylı bilgilere ulaşabilirsiniz.
+
+
+## İletişim
+
+- GitHub: [@dilarazynp](https://github.com/dilarazynp)
+- LinkedIn: [Zeynep Dilara Kurnaz](https://www.linkedin.com/in/zeynepdilarakurnaz/)
+
+## Lisans
+
+Bu proje MIT lisansı altında lisanslanmıştır. Daha fazla bilgi için `LICENSE` dosyasına bakın.
