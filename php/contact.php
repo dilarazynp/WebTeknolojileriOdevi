@@ -1,5 +1,7 @@
 <?php
 session_start();
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
 // Form POST ile gönderilmişse
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -27,6 +29,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Debug bilgisi
     error_log("Dizin yolu: " . $dataDir);
     error_log("Dosya yolu: " . $jsonFile);
+    error_log("Dizin izinleri: " . substr(sprintf('%o', fileperms($dataDir)), -4));
+    error_log("Dosya izinleri: " . (file_exists($jsonFile) ? substr(sprintf('%o', fileperms($jsonFile)), -4) : 'Dosya yok'));
 
     // Dizin kontrolü
     if (!is_dir($dataDir)) {
@@ -35,6 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             error_log("Dizin oluşturma hatası: " . error_get_last()['message']);
             die('Dizin oluşturulamadı: ' . $dataDir);
         }
+        chmod($dataDir, 0777); // Dizin izinlerini ayarla
     }
 
     // Dosya kontrolü
@@ -44,6 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             error_log("Dosya oluşturma hatası: " . error_get_last()['message']);
             die('Dosya oluşturulamadı: ' . $jsonFile);
         }
+        chmod($jsonFile, 0666); // Dosya izinlerini ayarla
     }
 
     // Mevcut verileri oku
