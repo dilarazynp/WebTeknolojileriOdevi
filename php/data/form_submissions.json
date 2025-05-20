@@ -38,5 +38,13 @@
         "subject": "sikayet",
         "message": "g221210011g221210011",
         "date": "2025-05-18 10:40:06"
+    },
+    {
+        "name": "Zeynep Dilara Kurnaz",
+        "email": "bedirhancan2004@gmail.com",
+        "phone": "05319142408",
+        "subject": "oneriler",
+        "message": "<li><a href=\"https:\/\/www.w3schools.com\/\" target=\"_blank\"><i class=\"fas fa-code me-2\"><\/i>w3schools<\/a><\/li>    \r\n                    <li><a href=\"https:\/\/www.hackerrank.com\/\" target=\"_blank\"><i class=\"fas fa-code me-2\"><\/i>HackerRank<\/a><\/li>\r\n                    <li>\r\n                        <a href=\"https:\/\/stackoverflow.com\/\" target=\"_blank\">\r\n                          <i class=\"fas fa-stack-overflow me-2\"><\/i>Stack Overflow\r\n                        <\/a>\r\n                      <\/li>",
+        "date": "2025-05-20 19:26:35"
     }
 ]
