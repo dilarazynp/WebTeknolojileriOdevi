@@ -26,12 +26,10 @@
 
 /* İletişim Kartları */
 .content-card {
-    background: white;
-    border-radius: 15px;
+    background-color: #fff;
     padding: 30px;
-    margin-bottom: 30px;
-    box-shadow: 0 5px 15px rgba(163, 92, 122, 0.1);
-    transition: all 0.3s ease;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     height: 100%;
 }
 
@@ -49,7 +47,6 @@
 .info-item {
     display: flex;
     align-items: flex-start;
-    margin-bottom: 20px;
 }
 
 .info-item i {
@@ -59,8 +56,8 @@
 }
 
 .info-item h5 {
-    color: #A35C7A;
     margin-bottom: 5px;
+    font-weight: 600;
 }
 
 .info-item p {
@@ -81,17 +78,14 @@
 }
 
 .btn-primary {
-    background-color: #A35C7A;
-    border-color: #A35C7A;
-    padding: 10px 25px;
-    font-weight: 600;
-    transition: all 0.3s ease;
+    background-color: #ff6b6b;
+    color: #fff;
+    border: none;
+    transition: background-color 0.3s ease;
 }
 
 .btn-primary:hover {
-    background-color: #C890A7;
-    border-color: #C890A7;
-    transform: translateY(-2px);
+    background-color: #ff8e8e;
 }
 
 .btn-outline-secondary {
@@ -185,19 +179,20 @@
 
 /* Map Responsive Styles */
 .map-responsive {
-    position: relative;
-    padding-bottom: 56.25%; /* 16:9 aspect ratio */
-    height: 0;
     overflow: hidden;
-    margin-bottom: 2rem;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    position: relative;
+    height: 0;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .map-responsive iframe {
-    position: absolute;
-    top: 0;
     left: 0;
-    width: 100%;
+    top: 0;
     height: 100%;
+    width: 100%;
+    position: absolute;
     border: 0;
 }
 
@@ -229,4 +224,65 @@
     .social-icons {
         justify-content: center;
     }
+}
+
+/* İletişim Formu Özel Stilleri */
+
+/* Form Stilleri */
+#contactForm .form-control.is-invalid,
+#contactForm .form-select.is-invalid,
+#contactForm .form-check-input.is-invalid ~ .form-check-label {
+    border-color: #dc3545;
+}
+
+#contactForm .form-control.is-invalid:focus,
+#contactForm .form-select.is-invalid:focus,
+#contactForm .form-check-input.is-invalid ~ .form-check-label:focus {
+    box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25);
+}
+
+#contactForm .invalid-feedback {
+    display: none;
+    width: 100%;
+    margin-top: 0.25rem;
+    font-size: 0.875em;
+    color: #dc3545;
+}
+
+#contactForm .form-control.is-invalid ~ .invalid-feedback,
+#contactForm .form-select.is-invalid ~ .invalid-feedback,
+#contactForm .form-check-input.is-invalid ~ .invalid-feedback {
+    display: block;
+}
+
+/* İzin checkbox'ı için */
+#agreement.is-invalid ~ .invalid-feedback {
+    display: block;
+}
+
+#agreement.is-invalid + .form-check-label {
+    color: #dc3545;
+}
+
+/* Buton Stilleri */
+.btn-info {
+    background-color: #A35C7A; /* Bilgi butonu rengi */
+    color: #fff;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-info:hover {
+    background-color: #C890A7;
+}
+
+.btn-secondary {
+    background-color: #6c757d; /* Temizle butonu rengi */
+    color: #fff;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
 } 

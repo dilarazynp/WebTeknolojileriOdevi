@@ -11,6 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $phone = $_POST['phone'] ?? '';
     $subject = $_POST['subject'] ?? '';
     $message = $_POST['message'] ?? '';
+    $gender = $_POST['gender'] ?? '';
 
     // Form verilerini JSON dosyasına kaydet
     $data = [
@@ -19,6 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         'phone' => $phone,
         'subject' => $subject,
         'message' => $message,
+        'gender' => $gender,
         'date' => date('Y-m-d H:i:s')
     ];
 
@@ -172,6 +174,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                         <tr>
                                             <th>Telefon:</th>
                                             <td><?php echo htmlspecialchars($phone); ?></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Cinsiyet:</th>
+                                            <td><?php 
+                                                switch($gender) {
+                                                    case 'male':
+                                                        echo 'Erkek';
+                                                        break;
+                                                    case 'female':
+                                                        echo 'Kadın';
+                                                        break;
+                                                    default:
+                                                        echo 'Belirtilmemiş';
+                                                }
+                                            ?></td>
                                         </tr>
                                         <tr>
                                             <th>Konu:</th>

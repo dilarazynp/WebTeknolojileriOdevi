@@ -98,24 +98,43 @@
         <div class="col-lg-6">
             <div class="content-card">
                 <h3 class="mb-4">Mesaj Gönderin</h3>
+              
                 <form id="contactForm" action="./php/contact.php" method="POST">
                     <div class="mb-3">
-                        <label for="name" class="form-label">Adınız Soyadınız</label>
+                        <label for="name" class="form-label">Adınız Soyadınız <span class="text-danger">*</span></label>
                         <input type="text" class="form-control" id="name" name="name">
                         <div class="invalid-feedback" id="nameError"></div>
                     </div>
                     <div class="mb-3">
-                        <label for="email" class="form-label">E-posta Adresiniz</label>
+                        <label for="email" class="form-label">E-posta Adresiniz <span class="text-danger">*</span></label>
                         <input type="email" class="form-control" id="email" name="email">
                         <div class="invalid-feedback" id="emailError"></div>
                     </div>
                     <div class="mb-3">
-                        <label for="phone" class="form-label">Telefon Numaranız</label>
+                        <label for="phone" class="form-label">Telefon Numaranız <span class="text-danger">*</span></label>
                         <input type="tel" class="form-control" id="phone" name="phone">
                         <div class="invalid-feedback" id="phoneError"></div>
                     </div>
                     <div class="mb-3">
-                        <label for="subject" class="form-label">Konu</label>
+                        <label class="form-label">Cinsiyet <span class="text-danger">*</span></label>
+                        <div class="d-flex gap-4">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="gender" id="male" value="male">
+                                <label class="form-check-label" for="male">
+                                    Erkek
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="gender" id="female" value="female">
+                                <label class="form-check-label" for="female">
+                                    Kadın
+                                </label>
+                            </div>
+                        </div>
+                        <div class="invalid-feedback" id="genderError"></div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="subject" class="form-label">Konu <span class="text-danger">*</span></label>
                         <select class="form-select" id="subject" name="subject">
                             <option value="">Seçiniz</option>
                             <option value="bilgi">Bilgi</option>
@@ -125,7 +144,7 @@
                         <div class="invalid-feedback" id="subjectError"></div>
                     </div>
                     <div class="mb-3">
-                        <label for="message" class="form-label">Mesajınız</label>
+                        <label for="message" class="form-label">Mesajınız <span class="text-danger">*</span></label>
                         <textarea class="form-control" id="message" name="message" rows="5"></textarea>
                         <div class="invalid-feedback" id="messageError"></div>
                     </div>
@@ -133,14 +152,14 @@
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" id="agreement" name="agreement">
                             <label class="form-check-label" for="agreement">
-                                <b>Kişisel verilerimin işlenmesine izin veriyorum</b>
+                                <b>Kişisel verilerimin işlenmesine izin veriyorum <span class="text-danger">*</span></b>
                             </label>
                             <div class="invalid-feedback" id="agreementError"></div>
                         </div>
                     </div>
                     <div class="d-flex gap-2">
                         <button type="button" class="btn btn-info" id="checkButton">Kontrol Et</button>
-                        <button type="submit" class="btn btn-primary" id="submitButton" disabled>Gönder</button>
+                        <button type="submit" class="btn btn-primary" id="submitButton">Gönder</button>
                         <button type="button" class="btn btn-secondary" id="resetButton">Temizle</button>
                     </div>
                 </form>

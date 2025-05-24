@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const subjectInput = document.getElementById('subject');
     const messageInput = document.getElementById('message');
     const agreementInput = document.getElementById('agreement');
+    const genderInputs = document.querySelectorAll('input[name="gender"]');
 
     // Hata mesajları için elementler
     const nameError = document.getElementById('nameError');
@@ -19,6 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const subjectError = document.getElementById('subjectError');
     const messageError = document.getElementById('messageError');
     const agreementError = document.getElementById('agreementError');
+    const genderError = document.getElementById('genderError');
 
     // Hata mesajlarını temizle
     function clearErrors() {
@@ -28,6 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
         subjectError.textContent = '';
         messageError.textContent = '';
         agreementError.textContent = '';
+        genderError.textContent = '';
 
         nameInput.classList.remove('is-invalid');
         emailInput.classList.remove('is-invalid');
@@ -35,6 +38,13 @@ document.addEventListener('DOMContentLoaded', function() {
         subjectInput.classList.remove('is-invalid');
         messageInput.classList.remove('is-invalid');
         agreementInput.classList.remove('is-invalid');
+        genderInputs.forEach(input => {
+            input.classList.remove('is-invalid');
+            input.closest('.form-check').classList.remove('is-invalid');
+            input.closest('.form-check').style.border = '';
+            input.closest('.form-check').style.borderRadius = '';
+            input.closest('.form-check').style.padding = '';
+        });
     }
 
     // Form validasyonu
@@ -77,6 +87,24 @@ document.addEventListener('DOMContentLoaded', function() {
             isValid = false;
         }
 
+        // Cinsiyet kontrolü
+        let genderSelected = false;
+        genderInputs.forEach(input => {
+            if (input.checked) {
+                genderSelected = true;
+            }
+        });
+
+        if (!genderSelected) {
+            genderError.textContent = 'Lütfen cinsiyet seçiniz';
+            genderError.style.display = 'block';
+            genderInputs.forEach(input => {
+                input.classList.add('is-invalid');
+                input.closest('.form-check').classList.add('is-invalid');
+            });
+            isValid = false;
+        }
+
         // Konu kontrolü
         if (!subjectInput.value) {
             subjectError.textContent = 'Lütfen bir konu seçiniz';
@@ -102,7 +130,8 @@ document.addEventListener('DOMContentLoaded', function() {
             isValid = false;
         }
 
-        submitButton.disabled = !isValid;
+        console.log('Validation result:', isValid);
+
         return isValid;
     }
 
@@ -110,7 +139,6 @@ document.addEventListener('DOMContentLoaded', function() {
     function resetForm() {
         form.reset();
         clearErrors();
-        submitButton.disabled = true;
     }
 
     // Event listeners
@@ -128,6 +156,15 @@ document.addEventListener('DOMContentLoaded', function() {
     inputs.forEach(input => {
         input.addEventListener('input', function() {
             if (this.classList.contains('is-invalid')) {
+                validateForm();
+            }
+        });
+    });
+
+    // Cinsiyet seçimi değişikliğinde validasyon
+    genderInputs.forEach(input => {
+        input.addEventListener('change', function() {
+            if (document.querySelector('input[name="gender"].is-invalid')) {
                 validateForm();
             }
         });

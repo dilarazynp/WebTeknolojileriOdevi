@@ -80,18 +80,25 @@ async function handleSubmit(event) {
 async function handleLogout(event) {
     event.preventDefault();
     try {
-        const response = await fetch('php/logout.php');
+        // Sayfanın konumuna göre logout.php yolunu belirle
+        const isInPhpDir = window.location.pathname.includes('/php/');
+        const logoutPath = isInPhpDir ? 'logout.php' : 'php/logout.php';
+        
+        const response = await fetch(logoutPath);
         if (response.ok) {
             sessionStorage.removeItem('isLoggedIn');
             sessionStorage.removeItem('userEmail');
-            window.location.href = 'index.html';
+            // Sayfanın konumuna göre yönlendirme yolunu belirle
+            const redirectPath = isInPhpDir ? '../index.html' : 'index.html';
+            window.location.href = redirectPath;
         }
     } catch (error) {
         console.error('Logout error:', error);
         // Hata olsa bile client-side logout işlemini yap
         sessionStorage.removeItem('isLoggedIn');
         sessionStorage.removeItem('userEmail');
-        window.location.href = 'index.html';
+        const redirectPath = window.location.pathname.includes('/php/') ? '../index.html' : 'index.html';
+        window.location.href = redirectPath;
     }
 }
 
