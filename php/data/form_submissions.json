@@ -1,140 +1,47 @@
 [
     {
         "name": "Zeynep Dilara Kurnaz",
-        "email": "g221210011@sakarya.edu.tr",
+        "email": "bedirhancan2004@gmail.com",
         "phone": "05319142408",
-        "subject": "bilgi",
-        "message": "88888888888888888888",
-        "date": "2025-05-17 14:39:07"
+        "subject": "sikayet",
+        "message": "aaaaaaaaaa",
+        "gender": "female",
+        "date": "2025-05-25 11:03:14"
     },
     {
-        "name": "zeynep",
-        "email": "dilarazynp66@gmail.com",
-        "phone": "05319142408",
-        "subject": "bilgi",
-        "message": "eskf\u015flsef\u015feslkf\u015feslkfsl\u015f",
-        "date": "2025-05-17 19:45:24"
-    },
-    {
-        "name": "sd\u00e7\u00f6f\u00e7s",
+        "name": "Zeynep Dilara Kurnaz",
         "email": "a@gmail.com",
         "phone": "05319142408",
-        "subject": "sikayet",
-        "message": "l\u015fzdfkl\u015fskfls\u015fkfsl\u015ffksl\u015f",
-        "date": "2025-05-17 19:46:52"
-    },
-    {
-        "name": "Zeynep Dilara Kurnaz",
-        "email": "bedirhancan2004@gmail.com",
-        "phone": "05319142408",
-        "subject": "sikayet",
-        "message": "elfeslfkseol\u015fgsekl\u015ffsl\u015ff",
-        "date": "2025-05-17 19:51:18"
-    },
-    {
-        "name": "Zeynep Dilara Kurnaz",
-        "email": "g221210011@sakarya.edu.tr",
-        "phone": "05319142408",
-        "subject": "sikayet",
-        "message": "g221210011g221210011",
-        "date": "2025-05-18 10:40:06"
-    },
-    {
-        "name": "Zeynep Dilara Kurnaz",
-        "email": "bedirhancan2004@gmail.com",
-        "phone": "05319142408",
-        "subject": "oneriler",
-        "message": "<li><a href=\"https:\/\/www.w3schools.com\/\" target=\"_blank\"><i class=\"fas fa-code me-2\"><\/i>w3schools<\/a><\/li>    \r\n                    <li><a href=\"https:\/\/www.hackerrank.com\/\" target=\"_blank\"><i class=\"fas fa-code me-2\"><\/i>HackerRank<\/a><\/li>\r\n                    <li>\r\n                        <a href=\"https:\/\/stackoverflow.com\/\" target=\"_blank\">\r\n                          <i class=\"fas fa-stack-overflow me-2\"><\/i>Stack Overflow\r\n                        <\/a>\r\n                      <\/li>",
-        "date": "2025-05-20 19:26:35"
-    },
-    {
-        "name": "Zeynep Dilara Kurnaz",
-        "email": "bedirhancan2004@gmail.com",
-        "phone": "05319142408",
-        "subject": "sikayet",
-        "message": "422969422969422969",
+        "subject": "bilgi",
+        "message": "aaaaaaaaaaaaaaa",
         "gender": "female",
-        "date": "2025-05-24 14:40:39"
+        "date": "2025-05-25 11:03:46"
     },
     {
         "name": "Zeynep Dilara Kurnaz",
-        "email": "bedirhancan2004@gmail.com",
+        "email": "a@gmail.com",
         "phone": "05319142408",
         "subject": "bilgi",
-        "message": "422969422969",
-        "gender": "",
-        "date": "2025-05-24 14:42:48"
-    },
-    {
-        "name": "Zeynep Dilara Kurnaz",
-        "email": "g221210011@sakarya.edu.tr",
-        "phone": "05319142408",
-        "subject": "bilgi",
-        "message": "422969422969",
+        "message": "aaaaaaaaaaaaaaa",
         "gender": "female",
-        "date": "2025-05-24 14:45:03"
+        "date": "2025-05-25 11:03:50"
     },
     {
         "name": "Zeynep Dilara Kurnaz",
-        "email": "g221210011@sakarya.edu.tr",
+        "email": "a@gmail.com",
         "phone": "05319142408",
         "subject": "bilgi",
-        "message": "<span class=\"text-danger\">*<\/span>",
-        "gender": "",
-        "date": "2025-05-24 14:49:18"
-    },
-    {
-        "name": "Zeynep Dilara Kurnaz",
-        "email": "g221210011@sakarya.edu.tr",
-        "phone": "05319142408",
-        "subject": "bilgi",
-        "message": "aaaaaaaaaaaaaaaaaa",
-        "gender": "",
-        "date": "2025-05-24 14:51:33"
-    },
-    {
-        "name": "Zeynep Dilara Kurnaz",
-        "email": "g221210011@sakarya.edu.tr",
-        "phone": "05319142408",
-        "subject": "oneriler",
-        "message": "document.addEventListener('DOMContentLoaded', function() {\r\n    const form = document.getElementById('contactForm');\r\n    const checkButton = document.getElementById('checkButton');\r\n    const submitButton = document.getElementById('submitButton');\r\n    const resetButton = document.getElementById('resetButton');\r\n\r\n    \/\/ Form elemanlar\u0131\r\n    const nameInput = document.getElementById('name');\r\n    const emailInput = document.getElementById('email');\r\n    const phoneInput = document.getElementById('phone');\r\n    const subjectInput = document.getElementById('subject');\r\n    const messageInput = document.getElementById('message');\r\n    const agreementInput = document.getElementById('agreement');\r\n    const genderInputs = document.querySelectorAll('input[name=\"gender\"]');\r\n\r\n    \/\/ Hata mesajlar\u0131 i\u00e7in elementler\r\n    const nameError = document.getElementById('nameError');\r\n    const emailError = document.getElementById('emailError');\r\n    const phoneError = document.getElementById('phoneError');\r\n    const subjectError = document.getElementById('subjectError');\r\n    const messageError = document.getElementById('messageError');\r\n    const agreementError = document.getElementById('agreementError');\r\n    const genderError = document.getElementById('genderError');\r\n\r\n    \/\/ Hata mesajlar\u0131n\u0131 temizle\r\n    function clearErrors() {\r\n        nameError.textContent = '';\r\n        emailError.textContent = '';\r\n        phoneError.textContent = '';\r\n        subjectError.textContent = '';\r\n        messageError.textContent = '';\r\n        agreementError.textContent = '';\r\n        genderError.textContent = '';\r\n\r\n        nameInput.classList.remove('is-invalid');\r\n        emailInput.classList.remove('is-invalid');\r\n        phoneInput.classList.remove('is-invalid');\r\n        subjectInput.classList.remove('is-invalid');\r\n        messageInput.classList.remove('is-invalid');\r\n        agreementInput.classList.remove('is-invalid');\r\n        genderInputs.forEach(input => {\r\n            input.classList.remove('is-invalid');\r\n            input.closest('.form-check').classList.remove('is-invalid');\r\n            input.closest('.form-check').style.border = '';\r\n            input.closest('.form-check').style.borderRadius = '';\r\n            input.closest('.form-check').style.padding = '';\r\n        });\r\n    }\r\n\r\n    \/\/ Form validasyonu\r\n    function validateForm() {\r\n        clearErrors();\r\n        let isValid = true;\r\n\r\n        \/\/ \u0130sim kontrol\u00fc\r\n        if (!nameInput.value.trim()) {\r\n            nameError.textContent = 'Ad Soyad alan\u0131 bo\u015f b\u0131rak\u0131lamaz';\r\n            nameInput.classList.add('is-invalid');\r\n            isValid = false;\r\n        } else if (nameInput.value.trim().length < 3) {\r\n            nameError.textContent = 'Ad Soyad en az 3 karakter olmal\u0131d\u0131r';\r\n            nameInput.classList.add('is-invalid');\r\n            isValid = false;\r\n        }\r\n\r\n        \/\/ Email kontrol\u00fc\r\n        const emailRegex = \/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$\/;\r\n        if (!emailInput.value.trim()) {\r\n            emailError.textContent = 'E-posta alan\u0131 bo\u015f b\u0131rak\u0131lamaz';\r\n            emailInput.classList.add('is-invalid');\r\n            isValid = false;\r\n        } else if (!emailRegex.test(emailInput.value.trim())) {\r\n            emailError.textContent = 'Ge\u00e7erli bir e-posta adresi giriniz';\r\n            emailInput.classList.add('is-invalid');\r\n            isValid = false;\r\n        }\r\n\r\n        \/\/ Telefon kontrol\u00fc\r\n        const phoneRegex = \/^[0-9]{10,11}$\/;\r\n        if (!phoneInput.value.trim()) {\r\n            phoneError.textContent = 'Telefon alan\u0131 bo\u015f b\u0131rak\u0131lamaz';\r\n            phoneInput.classList.add('is-invalid');\r\n            isValid = false;\r\n        } else if (!phoneRegex.test(phoneInput.value.trim())) {\r\n            phoneError.textContent = 'Telefon numaras\u0131 sadece rakamlardan olu\u015fmal\u0131d\u0131r (10-11 haneli)';\r\n            phoneInput.classList.add('is-invalid');\r\n            isValid = false;\r\n        }\r\n\r\n        \/\/ Cinsiyet kontrol\u00fc\r\n        let genderSelected = false;\r\n        genderInputs.forEach(input => {\r\n            if (input.checked) {\r\n                genderSelected = true;\r\n            }\r\n        });\r\n\r\n        if (!genderSelected) {\r\n            genderError.innerHTML = '<i class=\"fas fa-exclamation-circle text-danger me-2\"><\/i>L\u00fctfen cinsiyet se\u00e7iniz';\r\n            genderError.style.display = 'block';\r\n            genderInputs.forEach(input => {\r\n                input.classList.add('is-invalid');\r\n                input.closest('.form-check').classList.add('is-invalid');\r\n                input.closest('.form-check').style.border = '1px solid #dc3545';\r\n                input.closest('.form-check').style.borderRadius = '4px';\r\n                input.closest('.form-check').style.padding = '8px';\r\n            });\r\n            **isValid = false;** \/\/ <-- Bu sat\u0131r eklendi\r\n        } else {\r\n            genderError.innerHTML = ''; \/\/ Ba\u015far\u0131l\u0131 durumda simgeyi ve metni temizle\r\n            genderError.style.display = 'none';\r\n            genderInputs.forEach(input => {\r\n                input.classList.remove('is-invalid');\r\n                input.closest('.form-check').classList.remove('is-invalid');\r\n                input.closest('.form-check').style.border = '';\r\n                input.closest('.form-check').style.borderRadius = '';\r\n                input.closest('.form-check').style.padding = '';\r\n            });\r\n        }\r\n\r\n        \/\/ Konu kontrol\u00fc\r\n        if (!subjectInput.value) {\r\n            subjectError.textContent = 'L\u00fctfen bir konu se\u00e7iniz';\r\n            subjectInput.classList.add('is-invalid');\r\n            isValid = false;\r\n        }\r\n\r\n        \/\/ Mesaj kontrol\u00fc\r\n        if (!messageInput.value.trim()) {\r\n            messageError.textContent = 'Mesaj alan\u0131 bo\u015f b\u0131rak\u0131lamaz';\r\n            messageInput.classList.add('is-invalid');\r\n            isValid = false;\r\n        } else if (messageInput.value.trim().length < 10) {\r\n            messageError.textContent = 'Mesaj en az 10 karakter olmal\u0131d\u0131r';\r\n            messageInput.classList.add('is-invalid');\r\n            isValid = false;\r\n        }\r\n\r\n        \/\/ Ki\u015fisel veriler izni kontrol\u00fc\r\n        if (!agreementInput.checked) {\r\n            agreementError.textContent = 'Devam etmek i\u00e7in ki\u015fisel verilerin i\u015flenmesine izin vermelisiniz';\r\n            agreementInput.classList.add('is-invalid');\r\n            isValid = false;\r\n        }\r\n\r\n        console.log('Validation result:', isValid);\r\n\r\n        return isValid;\r\n    }\r\n\r\n    \/\/ Form s\u0131f\u0131rlama\r\n    function resetForm() {\r\n        form.reset();\r\n        clearErrors();\r\n    }\r\n\r\n    \/\/ Event listeners\r\n    checkButton.addEventListener('click', validateForm);\r\n    resetButton.addEventListener('click', resetForm);\r\n\r\n    form.addEventListener('submit', function(event) {\r\n        if (!validateForm()) {\r\n            event.preventDefault();\r\n        }\r\n    });\r\n\r\n    \/\/ Input de\u011fi\u015fikliklerinde validasyon\r\n    const inputs = [nameInput, emailInput, phoneInput, subjectInput, messageInput, agreementInput];\r\n    inputs.forEach(input => {\r\n        input.addEventListener('input', function() {\r\n            if (this.classList.contains('is-invalid')) {\r\n                validateForm();\r\n            }\r\n        });\r\n    });\r\n\r\n    \/\/ Cinsiyet se\u00e7imi de\u011fi\u015fikli\u011finde validasyon\r\n    genderInputs.forEach(input => {\r\n        input.addEventListener('change', function() {\r\n            if (document.querySelector('input[name=\"gender\"].is-invalid')) {\r\n                validateForm();\r\n            }\r\n        });\r\n    });\r\n});",
-        "gender": "",
-        "date": "2025-05-24 15:03:22"
-    },
-    {
-        "name": "Zeynep Dilara Kurnaz",
-        "email": "g221210011@sakarya.edu.tr",
-        "phone": "05319142408",
-        "subject": "bilgi",
-        "message": "It doesn't give a warning message and sends the form, but it does.",
+        "message": "aaaaaaaaaaaaaaa",
         "gender": "female",
-        "date": "2025-05-24 15:05:20"
+        "date": "2025-05-25 11:03:53"
     },
     {
         "name": "Zeynep Dilara Kurnaz",
-        "email": "g221210011@sakarya.edu.tr",
+        "email": "a@gmail.com",
         "phone": "05319142408",
         "subject": "bilgi",
-        "message": "It doesn't give a warning message and sends the form, but it does.",
+        "message": "aaaaaaaaaaaaaaa",
         "gender": "female",
-        "date": "2025-05-24 15:06:29"
-    },
-    {
-        "name": "Zeynep Dilara Kurnaz",
-        "email": "g221210011@sakarya.edu.tr",
-        "phone": "05319140000",
-        "subject": "bilgi",
-        "message": "aaaaaaaaaaaaaaaaaa",
-        "gender": "female",
-        "date": "2025-05-24 16:15:43"
-    },
-    {
-        "name": "Zeynep Dilara Kurnaz",
-        "email": "g221210011@sakarya.edu.tr",
-        "phone": "05319142408",
-        "subject": "oneriler",
-        "message": "g221210011g221210011",
-        "gender": "female",
-        "date": "2025-05-24 16:41:20"
+        "date": "2025-05-25 11:04:08"
     }
 ]

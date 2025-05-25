@@ -214,7 +214,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                         </tr>
                                         <tr>
                                             <th>Gönderim Tarihi:</th>
-                                            <td><?php echo date('d.m.Y H:i'); ?></td>
+                                            <td><?php echo date('d.m.Y H:i', strtotime($data['date'])); ?></td>
                                         </tr>
                                     </tbody>
                                 </table>
